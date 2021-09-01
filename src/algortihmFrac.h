@@ -3,27 +3,24 @@
 #include <string.h>
 #include <math.h>
 
+
 int *floatToFractions(float numberToFrac, int *retLength);
 char *returnStringOfHK(int *fractions, int *retLength);
 
-int main() {
-  int n, *fractions, *retLength;
-  float numberToFrac;
+char *mainAlgo(float numberToFrac) {
+  int *fractions, *retLength;
   char *stringFracs[1];
   retLength = (int *)malloc(sizeof(int));
 
-  numberToFrac = 5.4; //Need to contain decimals!
   fractions = floatToFractions(numberToFrac, retLength);
   *stringFracs = returnStringOfHK(fractions, retLength);
 
-  printf("%s", *stringFracs);
-
-  return 0;
+  return *stringFracs;
 }
 
 char *returnStringOfHK(int *fractions, int *retLength) {
   int h[*retLength + 3], k[*retLength + 3];
-  char static stringFracs[20], hStr[10], kStr[10];
+  char static stringFracs[100], hStr[50], kStr[50];
   h[0] = 0;
   h[1] = 1;
   k[0] = 1;
@@ -33,8 +30,6 @@ char *returnStringOfHK(int *fractions, int *retLength) {
     h[i] = (fractions[i - 2] * h[i - 1]) + h[i - 2];
     k[i] = (fractions[i - 2] * k[i - 1]) + k[i - 2];
     if(i == *retLength + 1) {
-      printf("h: %d\n", h[i]);
-      printf("k: %d\n", k[i]);
       sprintf(hStr, "%d", h[i]);
       sprintf(kStr, "%d", k[i]);
       break;
