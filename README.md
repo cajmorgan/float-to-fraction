@@ -16,9 +16,9 @@ npm install float-to-fraction
 
 In .js
 ```
-const floatToFraction = require('float-to-fraction')
+const floatToFraction = require('float-to-fraction');
 
-const float = 3.6
+const float = 3.6;
 const returnedArr = floatToFraction(float); //Returns [18, 5];
 ```
 
