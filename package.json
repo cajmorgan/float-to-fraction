@@ -1,9 +1,8 @@
 {
   "name": "float-to-fraction",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
-  "main": "./index.js",
-  "mode": "production",
+  "main": "index.js",
   "directories": {
     "lib": "lib"
   },

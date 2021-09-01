@@ -1,4 +1,4 @@
-const algorithm = require('./src/main.node')
+const algorithm = require('./lib/main.node')
 
 module.exports = function floatToFraction(floatInput) {
   floatInput = Math.round(floatInput * 100000) / 100000;
